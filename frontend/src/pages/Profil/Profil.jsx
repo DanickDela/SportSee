@@ -9,7 +9,7 @@ import {
 import BarGraph from "../../components/BarGraph/BarGraph";
 import RadarGraph from "../../components/RadarGraph/RadarGraph";
 import RadialBarGraph from "../../components/RadialBarGraph/RadialBarGraph";
-import LineGraph from "../../components/LineGraph/lineGraph";
+import LineGraph from "../../components/LineGraph/LineGraph";
 import Card from "../../components/Card/Card";
 import styles from "../../styles/profil.module.scss";
 

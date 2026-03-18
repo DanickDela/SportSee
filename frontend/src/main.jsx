@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/header";
 import Profil from "./pages/Profil/Profil";
 import Accueil from "./pages/Accueil/Accueil";
@@ -17,7 +17,7 @@ const Redirect = () => {
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <div className="app">
         <Header />
         <Sidebar />
@@ -29,6 +29,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           </Routes>
         </main>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
 );
