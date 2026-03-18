@@ -25,11 +25,10 @@ function Header() {
       </div>
 
       <nav className={styles.header__nav} aria-label="Navigation principale">
+        <NavLink to="/Accueil">Accueil</NavLink>
         <NavLink to="/" end>
-          Accueil
+          Profil
         </NavLink>
-
-        <NavLink to="/profil">Profil</NavLink>
 
         <NavLink to="/settings">Réglages</NavLink>
 

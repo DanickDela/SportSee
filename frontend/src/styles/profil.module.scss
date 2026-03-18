@@ -1,84 +1,55 @@
-.userSelect {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f7f8fc;
-  padding: 32px;
+@use "../styles/_variables";
+@use "../styles/_mixins";
+@use "../styles/_keyframes";
+@use "../styles/common.scss";
 
-  &__container {
-    width: 100%;
-    max-width: 900px;
-    text-align: center;
-  }
-
-  &__title {
-    margin: 0 0 12px;
-    font-size: 36px;
-    font-weight: 700;
-    color: #282d30;
-  }
-
-  &__subtitle {
-    margin: 0 0 40px;
-    font-size: 18px;
-    color: #74798c;
-  }
-
-  &__cards {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-}
-
-.userCard {
-  width: 260px;
-  min-height: 180px;
-  border: none;
-  border-radius: 16px;
-  background: white;
-  padding: 24px;
-  cursor: pointer;
+.userinfos {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background-color 0.2s ease;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    background-color: #ff0101;
+  justify-content: flex-start;
+  gap: 41px;
+  margin-bottom: 77px;
+  h1 {
+    font-size: 48px;
+    font-weight: variables.$medium;
+    line-height: 24px;
+    color: black;
+    span {
+      color: #ff0101;
+    }
   }
-
-  &:hover .userCard__label,
-  &:hover .userCard__name,
-  &:hover .userCard__id {
-    color: white;
+  p {
+    font-size: 18px;
+    font-weight: variables.$regular;
+    line-height: 24px;
+    color: black;
   }
+}
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 613px;
+  gap: 30px;
 
-  &__label {
-    font-size: 14px;
-    font-weight: 600;
-    color: #ff0101;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+  &__bargraph {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    background-color: #fbfbfb;
+    gap: 30px;
+    &_low {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
   }
-
-  &__name {
-    font-size: 24px;
-    font-weight: 700;
-    color: #282d30;
-  }
-
-  &__id {
-    font-size: 16px;
-    color: #74798c;
+  &__synth {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 258px;
+    height: 100%;
   }
 }
