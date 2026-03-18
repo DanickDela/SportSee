@@ -2,6 +2,7 @@
 
 SportSee est une application de suivi d’activité sportive permettant de visualiser les performances d’un utilisateur à travers différents graphiques interactifs.
 
+[Voir le site live](https://danickdela.github.io/SportSee/#/user/12)
 ---
 
 ## 📸 Aperçu
