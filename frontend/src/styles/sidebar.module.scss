@@ -1,0 +1,47 @@
+@use "../styles/_variables";
+@use "../styles/_mixins";
+@use "../styles/_keyframes";
+@use "./common";
+
+/**
+ * Block : Header
+ * Conteneur principal du haut de page.
+ */
+.sidebar {
+  grid-area: aside;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 940px;
+  gap: 164px;
+  background-color: variables.$black-color;
+
+  /**
+   * Élément : navigation principale
+   */
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 256px;
+  }
+  /**
+   * Élément : logo
+   */
+  &__copyright {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: variables.$medium;
+    color: variables.$white-color;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    width: 24px;
+    height: max-content;
+    left: 42px;
+    bottom: 66px;
+    margin: 0;
+  }
+}

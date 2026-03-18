@@ -1,0 +1,84 @@
+.userSelect {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f8fc;
+  padding: 32px;
+
+  &__container {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0 0 12px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #282d30;
+  }
+
+  &__subtitle {
+    margin: 0 0 40px;
+    font-size: 18px;
+    color: #74798c;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+}
+
+.userCard {
+  width: 260px;
+  min-height: 180px;
+  border: none;
+  border-radius: 16px;
+  background: white;
+  padding: 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    background-color: #ff0101;
+  }
+
+  &:hover .userCard__label,
+  &:hover .userCard__name,
+  &:hover .userCard__id {
+    color: white;
+  }
+
+  &__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ff0101;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #282d30;
+  }
+
+  &__id {
+    font-size: 16px;
+    color: #74798c;
+  }
+}

@@ -1,0 +1,55 @@
+@use "../styles/_variables";
+@use "../styles/_mixins";
+@use "../styles/_keyframes";
+@use "../styles/common.scss";
+
+.userinfos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 41px;
+  margin-bottom: 77px;
+  h1 {
+    font-size: 48px;
+    font-weight: variables.$medium;
+    line-height: 24px;
+    color: black;
+    span {
+      color: #ff0101;
+    }
+  }
+  p {
+    font-size: 18px;
+    font-weight: variables.$regular;
+    line-height: 24px;
+    color: black;
+  }
+}
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 613px;
+  gap: 30px;
+
+  &__bargraph {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    background-color: #fbfbfb;
+    gap: 30px;
+    &_low {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+  &__synth {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 258px;
+    height: 100%;
+  }
+}

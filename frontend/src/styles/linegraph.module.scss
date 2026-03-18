@@ -1,0 +1,12 @@
+@use "_variables";
+@use "_mixins";
+@use "_keyframes";
+@use "common.scss";
+
+.linegraph {
+  position: relative;
+  width: 258px;
+  height: 263px;
+  border-radius: 5px;
+  background-color: red;
+}

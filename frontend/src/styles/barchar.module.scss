@@ -1,0 +1,61 @@
+@use "_variables";
+@use "_mixins";
+@use "_keyframes";
+@use "common.scss";
+
+.chartWrapper {
+  position: relative;
+  margin: 0px;
+  padding: 0;
+}
+
+.chartWrapper :global(.recharts-legend-wrapper) {
+  width: auto !important;
+}
+
+.chartTitle {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  font-size: 15px;
+  font-weight: variables.$medium;
+  line-height: 24px;
+  color: #20253a;
+}
+
+.chartWrapper :global(.recharts-default-legend) {
+  display: flex !important;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 32px;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.chartWrapper :global(.recharts-legend-item) {
+  margin-right: 0 !important;
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+.chartWrapper :global(.recharts-legend-item-text) {
+  color: #74798c !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+}
+
+.boxhisto {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  color: white;
+  font-size: 7;
+  font-weight: variables.$medium;
+  line-height: 24px;
+  padding: 4px 6px 4px 7px;
+}

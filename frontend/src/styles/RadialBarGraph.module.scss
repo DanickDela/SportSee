@@ -1,0 +1,67 @@
+@use "_variables";
+@use "_mixins";
+@use "_keyframes";
+@use "common.scss";
+
+.radialgraphchart {
+  position: relative;
+  width: 258px;
+  height: 263px;
+  border-radius: 5px;
+  background-color: #fbfbfb;
+  &__title {
+    position: absolute;
+    left: 30px;
+    top: 24px;
+    font-size: 15px;
+    font-weight: variables.$medium;
+    line-height: 24px;
+    color: #20253a;
+  }
+}
+
+.score {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 159.38px;
+  height: 159.38px;
+  //   background: white;
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  &__value {
+    font-size: 26px;
+    font-weight: variables.$bold;
+    line-height: 26px;
+    color: #282d30;
+  }
+
+  &__text {
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    font-weight: variables.$medium;
+    line-height: 26px;
+    margin: 0;
+  }
+}
+
+.innerCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}

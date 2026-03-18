@@ -1,0 +1,73 @@
+/**
+ * ============================================================================
+ * HEADER MODULE
+ * ============================================================================
+ *
+ * Composant Header global de l’application.
+ *
+ * Responsabilités :
+ * - Affichage du logo
+ * - Navigation principale (Accueil / À propos)
+ *
+ * Layout :
+ * - Flexbox horizontal
+ * - Espacement via gap
+ * - Alignement vertical centré
+ *
+ * ============================================================================
+ */
+
+@use "../styles/_variables";
+@use "../styles/_mixins";
+@use "../styles/_keyframes";
+@use "./common";
+
+/**
+ * Block : Header
+ * Conteneur principal du haut de page.
+ */
+.header {
+  grid-area: head;
+  display: flex;
+  justify-content: space-between;
+  // height: 91px;
+  background-color: variables.$black-color;
+  /**
+   * Élément : navigation principale
+   */
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    margin-top: 36px;
+    margin-right: 74.5px;
+    gap: 219px;
+    height: 34px;
+    font-size: 24px;
+    font-weight: variables.$medium;
+    line-height: 24px;
+    text-align: end;
+    /**
+     * Liens de navigation
+     */
+    a {
+      text-decoration: none;
+      color: variables.$white-color;
+      &[aria-current="page"] {
+        text-decoration: underline;
+      }
+    }
+  }
+  /**
+   * Élément : logo
+   */
+  &__logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+    margin-left: 28px;
+    img {
+      width: 178px;
+      height: 60.93px;
+    }
+  }
+}

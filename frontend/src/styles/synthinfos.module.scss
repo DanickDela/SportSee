@@ -1,0 +1,34 @@
+@use "../styles/_variables";
+@use "../styles/_mixins";
+@use "../styles/_keyframes";
+@use "./common";
+
+.infos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  height: 124px;
+  width: 100%;
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  padding-left: 32px;
+  img {
+    height: 60px;
+    width: 60px;
+  }
+  &__macro {
+    &_quantity {
+      font-size: 20px;
+      font-weight: variables.$bold;
+      line-height: 24px;
+      color: #282d30;
+    }
+    &_name {
+      font-size: 14px;
+      font-weight: variables.$medium;
+      line-height: 24px;
+      color: #74798c;
+    }
+  }
+}
