@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ModelFactory } from "../Factory/Modelfactory.js";
+import { ModelFactory } from "../Factory/ModelFactory.js";
 import {
   mockedUserInfo,
   mockedUserActivities,
