@@ -1,3 +1,6 @@
+@use "./variables";
+@use "./common.scss";
+
 /**
  * ============================================================================
  * HEADER MODULE
@@ -17,11 +20,6 @@
  * ============================================================================
  */
 
-@use "../styles/_variables";
-@use "../styles/_mixins";
-@use "../styles/_keyframes";
-@use "./common";
-
 /**
  * Block : Header
  * Conteneur principal du haut de page.
@@ -30,8 +28,8 @@
   grid-area: head;
   display: flex;
   justify-content: space-between;
-  // height: 91px;
   background-color: variables.$black-color;
+  width: 100%;
   /**
    * Élément : navigation principale
    */
@@ -41,6 +39,9 @@
     margin-top: 36px;
     margin-right: 74.5px;
     gap: 219px;
+    @media (max-width: 1024px) {
+      gap: 89px;
+    }
     height: 34px;
     font-size: 24px;
     font-weight: variables.$medium;

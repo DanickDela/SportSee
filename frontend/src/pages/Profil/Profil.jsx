@@ -108,11 +108,15 @@ function Accueil() {
 
       <section className={styles.dashboard}>
         <div className={styles.dashboard__bargraph}>
-          <BarGraph data={userActivityData?.activities ?? []} />
+          <div className={styles.dashboard__bargraph_top}>
+            <BarGraph data={userActivityData?.activities ?? []} />
+          </div>
 
           <div className={styles.dashboard__bargraph_low}>
             <LineGraph data={userSessionsData?.sessions ?? []} />
-            <RadarGraph data={userPerformanceData?.formattedData ?? []} />
+            <div className={styles.dashboard__bargraph_low_performance}>
+              <RadarGraph data={userPerformanceData?.formattedData ?? []} />
+            </div>
             <RadialBarGraph score={user.scorePercent ?? 0} />
           </div>
         </div>

@@ -1,7 +1,5 @@
-@use "../styles/_variables";
-@use "../styles/_mixins";
-@use "../styles/_keyframes";
-@use "./common";
+@use "./variables";
+@use "./common.scss";
 
 .infos {
   display: flex;
@@ -9,7 +7,10 @@
   align-items: center;
   gap: 24px;
   height: 124px;
-  width: 100%;
+  width: 258px;
+  @media (max-width: 1024px) {
+    width: 225px;
+  }
   background-color: #fbfbfb;
   border-radius: 5px;
   padding-left: 32px;
@@ -22,12 +23,20 @@
       font-size: 20px;
       font-weight: variables.$bold;
       line-height: 24px;
+      @media (max-width: 1024px) {
+        font-size: 17px;
+        line-height: 20px;
+      }
       color: #282d30;
     }
     &_name {
       font-size: 14px;
       font-weight: variables.$medium;
       line-height: 24px;
+      @media (max-width: 1024px) {
+        font-size: 12px;
+        line-height: 20px;
+      }
       color: #74798c;
     }
   }

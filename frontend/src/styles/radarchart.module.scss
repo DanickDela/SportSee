@@ -1,14 +1,9 @@
-@use "_variables";
-@use "_mixins";
-@use "_keyframes";
-@use "common.scss";
-
-.graphchart {
-  width: 258px;
-  height: 263px;
-  border-radius: 5px;
-  background-color: #282d30;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@use "./common.scss";
+.tick {
+  font-size: 12px;
+  fill: white;
+  font-weight: 500;
+  @media (max-width: 1024px) {
+    font-size: 10px;
+  }
 }

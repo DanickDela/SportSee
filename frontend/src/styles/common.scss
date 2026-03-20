@@ -1,18 +1,31 @@
-@use "../styles/_variables";
-@use "../styles/_mixins";
-@use "../styles/_keyframes";
+@use "./variables";
+@use "./_mixins";
+@use "./keyframes";
 
+/**
+ * Reset du conteneur racine React
+ */
 #root {
   margin: 0;
   padding: 0;
 }
 
+/**
+ * Reset global
+ * - supprime les marges/paddings par défaut
+ * - applique box-sizing pour un layout prévisible
+ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/**
+ * Styles globaux du body
+ * - police principale
+ * - hauteur minimale pour couvrir tout l'écran
+ */
 body {
   margin: 0;
   padding: 0;
@@ -20,23 +33,52 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/**
+ * Layout principal de l'application
+ *
+ * Utilise CSS Grid pour structurer :
+ * - un header en haut (full width)
+ * - une sidebar à gauche
+ * - le contenu principal à droite
+ */
 .app {
   display: grid;
+
+  // Sidebar fixe + contenu flexible
   grid-template-columns: 117px 1fr;
-  grid-template-rows: 91px 1fr;
+
+  // Header + contenu
+  grid-template-rows: 91px auto;
+
   grid-template-areas:
     "head head"
     "aside main";
 
-  width: 100%;
   max-width: 1440px;
   min-height: 100vh;
   margin: 0 auto;
-}
-/* Landing Page */
+  overflow: hidden;
 
+  @media (max-width: 1024px) {
+    grid-template-columns: 90px 1fr;
+    grid-template-rows: 85px auto;
+  }
+}
+
+/**
+ * Zone principale du contenu (dashboard)
+ */
 .main {
   grid-area: main;
   background-color: variables.$white-color;
+
+  // Marges internes pour respecter la maquette
   margin: 68px 90px 87px 106px;
+
+  @media (max-width: 1024px) {
+    margin: 15px 32px 40px 40px;
+
+    // Permet d'éviter que le contenu se compresse trop
+    min-width: 850px;
+  }
 }

@@ -1,0 +1,61 @@
+<section className="dashboard">
+  <div className="dashboard__metrics">
+    <div className="dashboard__metrics-container">
+      <div className="dashboard__metrics-header">
+        <h3 className="dashboard__metrics-title">Activité quotidienne</h3>
+        <div className="dashboard__metrics-legend">
+          <div className="dashboard__metrics-legend-item">
+            <div className="dashboard__metrics-legend-icon"></div>
+            <p className="dashboard__metrics-legend-text">Poids (kg)</p>
+          </div>
+          <div className="dashboard__metrics-legend-item">
+            <div className="dashboard__metrics-legend-icon"></div>
+            <p className="dashboard__metrics-legend-text">
+              Calories brûlées (kCal)
+            </p>
+          </div>
+        </div>
+      </div>
+      <BarChart data="{userActivity}" />
+    </div>
+
+    <div className="dashboard__metrics__average">
+      <div className="dashboard__metrics__average-session">
+        <h3 className="dashboard__metrics__average-title">
+          Durée moyenne des sessions
+        </h3>
+        <LineChart data="{userAverageSessions}" />
+      </div>
+      <div className="dashboard__metrics__average-performance">
+        <RadarChart data="{userPerformance}" />
+      </div>
+      <div className="dashboard__metrics__average-score">
+        <h3 className="dashboard__metrics__average-title">Score</h3>
+        <RadialBar data="{userInfo}" />
+      </div>
+    </div>
+  </div>
+
+  <div className="dashboard__macro">
+    <MacroInfos
+      data="{userInfo.calories}"
+      icon="{flames}"
+      className="dashboard__macro-item"
+    />
+    <MacroInfos
+      data="{userInfo.proteines}"
+      icon="{meat}"
+      className="dashboard__macro-item"
+    />
+    <MacroInfos
+      data="{userInfo.glucides}"
+      icon="{apple}"
+      className="dashboard__macro-item"
+    />
+    <MacroInfos
+      data="{userInfo.lipides}"
+      icon="{burger}"
+      className="dashboard__macro-item"
+    />
+  </div>
+</section>

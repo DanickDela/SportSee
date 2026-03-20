@@ -1,8 +1,5 @@
-@use "../styles/_variables";
-@use "../styles/_mixins";
-@use "../styles/_keyframes";
-@use "./common";
-
+@use "./variables";
+@use "./common.scss";
 /**
  * Block : Header
  * Conteneur principal du haut de page.
@@ -14,6 +11,10 @@
   flex-direction: column;
   height: 940px;
   gap: 164px;
+  @media (max-width: 1024px) {
+    height: 695px;
+  }
+
   background-color: variables.$black-color;
 
   /**
@@ -25,6 +26,10 @@
     align-items: center;
     gap: 20px;
     margin-top: 256px;
+    @media (max-width: 1024px) {
+      margin-top: 176px;
+      gap: 10px;
+    }
   }
   /**
    * Élément : logo
@@ -42,6 +47,10 @@
     height: max-content;
     left: 42px;
     bottom: 66px;
+    @media (max-width: 1024px) {
+      bottom: 35px;
+      left: 32px;
+    }
     margin: 0;
   }
 }

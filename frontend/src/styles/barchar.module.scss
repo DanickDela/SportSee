@@ -1,7 +1,5 @@
-@use "_variables";
-@use "_mixins";
-@use "_keyframes";
-@use "common.scss";
+@use "./variables";
+@use "./common.scss";
 
 .chartWrapper {
   position: relative;

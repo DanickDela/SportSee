@@ -1,5 +1,6 @@
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 import styles from "../../styles/radialbargraph.module.scss";
+import useIsTablet from "../../hook/useIsTablet";
 import PropTypes from "prop-types";
 /**
  * Composant RadialBarGraph
@@ -22,8 +23,13 @@ import PropTypes from "prop-types";
  */
 
 const RadialBarGraph = ({ score }) => {
+  const isTablet = useIsTablet();
   const startAngle = 90;
 
+  /**
+   * Données formatées pour Recharts
+   * @type {Array<{ uv: number, fill: string }>}
+   */
   const chartData = [
     {
       uv: score,
@@ -32,9 +38,9 @@ const RadialBarGraph = ({ score }) => {
   ];
 
   return (
-    <div className={styles.radialgraphchart}>
-      <p className={styles.radialgraphchart__title}>Score</p>
-      <ResponsiveContainer width="100%" height={263}>
+    <div className={styles.graphchart}>
+      <p className={styles.graphchart__title}>Score</p>
+      <ResponsiveContainer width="100%" height={isTablet ? 194 : 258}>
         <RadialBarChart
           data={chartData}
           innerRadius="60%"

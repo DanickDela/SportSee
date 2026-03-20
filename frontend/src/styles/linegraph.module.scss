@@ -1,12 +1,37 @@
-@use "_variables";
-@use "_mixins";
-@use "_keyframes";
-@use "common.scss";
+@use "./variables";
+@use "./common.scss";
 
-.linegraph {
-  position: relative;
-  width: 258px;
-  height: 263px;
-  border-radius: 5px;
+/**
+ * Conteneur principal du graphique en ligne.
+ *
+ * Ce bloc sert de support au LineChart :
+ * - fond coloré conforme à la maquette,
+ * - position relative pour permettre le placement absolu du titre.
+ */
+.graphchart {
   background-color: red;
+  position: relative;
+
+  /**
+   * Titre du graphique.
+   *
+   * Positionné en absolu dans le coin supérieur gauche
+   * pour rester superposé au graphique sans perturber son layout.
+   */
+  &__title {
+    position: absolute;
+    top: 29px;
+    left: 34px;
+    font-size: 15px;
+    font-weight: variables.$medium;
+    color: rgba(255, 255, 255, 0.5);
+    width: 147px;
+
+    @media (max-width: 1024px) {
+      top: 19px;
+      left: 24px;
+      font-size: 13px;
+      width: 100px;
+    }
+  }
 }

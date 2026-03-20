@@ -1,55 +1,139 @@
-@use "../styles/_variables";
-@use "../styles/_mixins";
-@use "../styles/_keyframes";
-@use "../styles/common.scss";
+@use "./variables";
+@use "./common.scss";
 
+/**
+ * Section des informations utilisateur
+ * (titre + message de félicitations)
+ */
 .userinfos {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 41px;
   margin-bottom: 77px;
+
+  @media (max-width: 1024px) {
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  /**
+   * Titre principal (Bonjour + prénom)
+   */
   h1 {
     font-size: 48px;
     font-weight: variables.$medium;
     line-height: 24px;
     color: black;
+
+    @media (max-width: 1024px) {
+      font-size: 36px;
+      line-height: 1.2;
+    }
+
+    /**
+     * Mise en avant du prénom utilisateur
+     */
     span {
       color: #ff0101;
     }
   }
+
+  /**
+   * Texte descriptif sous le titre
+   */
   p {
     font-size: 18px;
     font-weight: variables.$regular;
     line-height: 24px;
     color: black;
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+      line-height: 1.4;
+    }
   }
 }
+
+/**
+ * Layout principal du dashboard
+ * (graphiques + synthèse nutritionnelle)
+ */
 .dashboard {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  height: 613px;
   gap: 30px;
 
+  @media (max-width: 1024px) {
+    gap: 20px;
+    min-height: auto;
+  }
+
+  /**
+   * Conteneur principal des graphiques
+   */
   &__bargraph {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    height: 320px;
-    background-color: #fbfbfb;
     gap: 30px;
+    width: 100%;
+    min-width: 0; // évite overflow dans flex
+
+    @media (max-width: 1024px) {
+      gap: 13px;
+    }
+
+    /**
+     * Graphique principal (bar chart)
+     */
+    &_top {
+      background-color: #fbfbfb;
+      height: 320px;
+      min-width: 0;
+    }
+
+    /**
+     * Ligne des 3 graphiques secondaires
+     * (line, radar, radial)
+     */
     &_low {
       display: flex;
-      flex-direction: row;
       gap: 30px;
+
+      @media (max-width: 1024px) {
+        gap: 20px;
+      }
+
+      /**
+       * Chaque graphique enfant
+       */
+      > * {
+        flex: 1; // répartition égale
+        aspect-ratio: 1 / 1; // format carré
+        min-width: 0;
+        border-radius: 5px;
+      }
+
+      /**
+       * Variante pour le radar (fond sombre)
+       */
+      &_performance {
+        background: #282d30;
+      }
     }
   }
+
+  /**
+   * Colonne de synthèse nutritionnelle
+   * (cards calories, protéines, etc.)
+   */
   &__synth {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 258px;
-    height: 100%;
+    gap: 39px;
+
+    @media (max-width: 1024px) {
+      gap: 10px;
+    }
   }
 }

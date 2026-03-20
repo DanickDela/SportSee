@@ -1,18 +1,12 @@
-@use "_variables";
-@use "_mixins";
-@use "_keyframes";
-@use "common.scss";
-
+@use "./variables";
+@use "./common.scss";
 /**
  * Conteneur principal du graphique radial.
  * Définit la taille de la carte, son fond et son arrondi.
  */
 
-.radialgraphchart {
+.graphchart {
   position: relative;
-  width: 258px;
-  height: 263px;
-  border-radius: 5px;
   background-color: #fbfbfb;
 
   /**
@@ -24,6 +18,10 @@
     position: absolute;
     left: 30px;
     top: 24px;
+    @media (max-width: 1024px) {
+      left: 15px;
+      top: 10px;
+    }
     font-size: 15px;
     font-weight: variables.$medium;
     line-height: 24px;
@@ -59,6 +57,10 @@
     font-size: 26px;
     font-weight: variables.$bold;
     line-height: 26px;
+    @media (max-width: 1024px) {
+      font-size: 20px;
+      line-height: 20px;
+    }
     color: #282d30;
   }
 
@@ -67,6 +69,10 @@
    */
   &__text {
     font-size: 16px;
+    @media (max-width: 1024px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
     color: black;
     text-align: center;
     font-weight: variables.$medium;
@@ -83,8 +89,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 160px;
-  height: 160px;
+  width: 172px;
+  height: 172px;
+  @media (max-width: 1024px) {
+    width: 125px;
+    height: 125px;
+  }
   background: white;
   border-radius: 50%;
   transform: translate(-50%, -50%);

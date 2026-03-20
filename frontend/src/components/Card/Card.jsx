@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "../../styles/synthinfos.module.scss";
+import styles from "../../styles/card.module.scss";
 
 /**
  * Composant affichant une information de synthèse
